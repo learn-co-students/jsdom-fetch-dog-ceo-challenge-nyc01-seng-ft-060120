@@ -41,9 +41,9 @@ function renderBreeds(breeds){
     })
 }
 
-function filterBreeds(breeds, value){
+function filterBreeds(value){
     if (value === 'all') {return breedsSource}
-    else {return breeds.filter(breed => breed.startsWith(value))}
+    else {return breedsSource.filter(breed => breed.startsWith(value))}
 }
 
 function swapColor(e){
@@ -69,7 +69,7 @@ function breedSelect(){
     dropdown.selectedIndex = allOption;
     //
     dropdown.addEventListener('change', (e) => {
-        renderBreeds(filterBreeds(breedsSource, e.target.value))
+        renderBreeds(filterBreeds(e.target.value))
     })
 }
 
