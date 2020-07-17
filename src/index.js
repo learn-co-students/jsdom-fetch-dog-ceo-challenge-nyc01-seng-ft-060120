@@ -3,8 +3,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
     // CONSTANT DECLARATIONS
     const dogImageContainer = document.querySelector('#dog-image-container')
     const dogBreedsList = document.querySelector('ul#dog-breeds')
-    const breedLis = document.querySelectorAll('ul#dog-breeds>li')
     const alphabetSelector = document.querySelector('select')
+
+
 
 
     // FUNCTION DECLARATIONS
@@ -72,6 +73,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
     const filterer = () => {
         alphabetSelector.addEventListener('change', e => {
             const letter = e.target.value
+
+            const breedLis = document.querySelectorAll('ul#dog-breeds>li')
             breedLis.forEach(breedName => {
                 console.log(breedName)
                 if (breedName.textContent.startsWith(letter)) {
