@@ -8,10 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const dogBreedContainer = document.getElementById("dog-breeds")
 
   const allBreeds = document.getElementById('dog-breeds')
-  
-  console.log(allBreeds.children)
- // const breedLis = document.getElementsByTagName('li').innerHTML
 
+  let dogsArray = []
+  
+  console.log(allBreeds)
+  const breedLis = document.getElementsByTagName('li')
+  console.log(breedLis)
   //const breedNames = breedLis.foreach(breed => breed[])
   //const breedNames = breedLis.forEach(breed => breed.innerHTML)
   //const breedArray = arrayFrom.allBreeds.childElements
@@ -35,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
       breeds = Object.keys(breedResults.message);
       listBreeds(breeds);
       printBreeds(breeds);
+      dogsArray = breeds
     })
   }
 
@@ -47,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } 
 
   function listBreeds(losBreeds) {
+    dogBreedContainer.innerHTML = ``
     losBreeds.forEach(breed => {
       const breedLi = document.createElement("li")
       breedLi.innerHTML = `
@@ -60,21 +64,14 @@ document.addEventListener('DOMContentLoaded', () => {
     e.target.style.color = "red"
   })
 
-
-  //function selectBreedsStartingWith(letter) {
-    //updateBreedList(breeds.filter(breed => breed.startsWith(letter)));
- // }
-
-
-
-  function filterBreedsStartingWith(letter) {
-    allBreeds.filter()
-  }
   function printBreeds() {
     breedDropDown.addEventListener('change', (e) => {
-      console.log(e.target.value)
-      //selectBreedsStartingWith(e.target.value);
+      filterBreedsByLetter(e.target.value)
     })
+  }
+
+  function filterBreedsByLetter(letter) {
+    listBreeds(dogsArray.filter(breed => breed.startsWith(letter)))
   }
   
   getImages()
