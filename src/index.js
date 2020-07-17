@@ -41,9 +41,9 @@ function renderBreeds(breeds){
     })
 }
 
-function filterBreeds(breeds, char){
-    if (char === 'all') {return breedsSource}
-    else {return breeds.filter(breed => breed.startsWith(char))}
+function filterBreeds(breeds, value){
+    if (value === 'all') {return breedsSource}
+    else {return breeds.filter(breed => breed.startsWith(value))}
 }
 
 function swapColor(e){
