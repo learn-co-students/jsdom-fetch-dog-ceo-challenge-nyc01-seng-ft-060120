@@ -37,9 +37,7 @@ function getBreeds(){
     .then(breeds => {normalArray = Object.keys(breeds.message);
         renderBreeds(normalArray);
         printArray(normalArray)
-        
-    })
-         
+    })       
 }
 
 function renderBreeds(array){
@@ -60,27 +58,17 @@ e.target.style.color = "red"
 
 // CHALLENGE 4
 
-const valueA = dropDown.children[0].value
-const valueB = dropDown.children[1].value
-const valueC = dropDown.children[2].value
-const valueD = dropDown.children[3].value
-
-
-
 function printArray(a){
     const breedArray = a;
    
+    dropDown.addEventListener('change',(e) =>{
+        startsWith(event.target.value);
+    });
 
-dropDown.addEventListener('change',(e) =>{
-    console.log(e.target.value)
-    selectBreedsStartingWith(event.target.value);
-});
-
-function selectBreedsStartingWith(letter) {
-    // console.log(breedArray)
-    const win = breedArray.filter(breed => breed.startsWith(letter));
-    renderBreeds(win)
-  }
+    function startsWith(letter) {
+        const win = breedArray.filter(breed => breed.startsWith(letter));
+        renderBreeds(win)
+    }
 }
 
 
