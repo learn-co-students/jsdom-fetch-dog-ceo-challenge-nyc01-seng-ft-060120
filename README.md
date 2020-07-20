@@ -41,7 +41,7 @@ change.
 
 ---
 
-## Challenge 4
+√ ## Challenge 4
 
 Once we are able to load _all_ of the dog breeds onto the page, add JavaScript
 so that the user can filter breeds that start with a particular letter using a

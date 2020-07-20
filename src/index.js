@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
       filterBreeds(e.target.value)
     })
     function filterBreeds(letter){
-      const filtered = breedArray.filter(breed => breed.startsWith(letter));
+      let a = breedArray
+      const filtered = a.filter(breed => breed.startsWith(letter));
       renderBreeds(filtered)
     }
   }
